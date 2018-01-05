@@ -6,6 +6,7 @@ export class ProductGaurdService {
   constructor(private _router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
+    console.log(route.url[1].path, +route.url[1].path);
     let id = +route.url[1].path;
     if (isNaN(id) || id < 1) {
       alert('invalid route');
